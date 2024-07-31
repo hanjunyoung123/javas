@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직접함수</title>
+</head>
+<style>
+    #tree{
+        width: 300px;
+        object-fit: cover;
+    }
+</style>
+<body>
+    <img src="../lightBox.html/images/tree-1-thumb.jpg" alt="붉은석양나무" id="tree">
+    <script>
+        // const tree = document.querySelector("#tree")
+        // tree.onclick = function(){
+        //     // alert("이미지를 클릭했습니다.")
+        //     const newImg = "../lightBox.html/images/tree-2-thumb.jpg"
+        //     tree.src = newImg
+        // }
+        //
+        const tree = document.querySelector("#tree")
+        const orignalsrc = tree.getAttribute("src")
+        const newSrc = "../lightBox.html/images/tree-2-thumb.jpg"
+        tree.onclick = function(){
+            if(tree.getAttribute("src")===orignalsrc){
+                tree.setAttribute("src",newSrc)
+            }else{
+                tree.setAttribute("src", originalSrc);
+            }
+        }
+
+    </script>
+</body>
+</html>
