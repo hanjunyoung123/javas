@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 색변경</title>
+</head>
+<body>
+    <button class="colorChange">색변경</button>
+    <script>
+        const btn = document.querySelector(".colorChange")
+        // 색 랜덤 변경기능
+        function random(number){
+            return Math.floor(Math.random() * (number)+1 )
+        }
+        // 버튼 클릭시 색변경
+        btn.addEventListener("click",function(){
+            const rancol = `rgb(${random(255)} ${random(255)} ${random(255)})`
+            document.body.style.backgroundColor = rancol
+        })
+    </script>
+</body>
+</html>

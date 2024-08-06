@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 추가</title>
+</head>
+<body>
+    <ul id="list">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <!-- 이미지 js 출력 -->
+    <div class="newname"></div>
+    <button id="addItemBtn">add item</button>
+    <script>
+        const addBtn = document.querySelector("#addItemBtn")
+        const list = document.querySelector("#list")
+        // addBtn.addEventListener("click", function(){})
+        addBtn.addEventListener("click", ()=>{
+            // 새로운 요소를 만든다. createElement("요소명")
+            const newItem = document.createElement("li")
+            // 요소에 들어갈 글자를 만들기.
+            newItem.textContent = `item4`
+            // 부모에 자식을 연결
+            newItem.setAttribute("class","item4")
+            // console.log(newItem);
+            list.appendChild(newItem)
+
+            // list 안에 h1으로 본인이름 추가하기
+            // 새로운 요소를 만든다.
+            const newname = document.createElement("h1")
+            // 요소에 들어갈 글자를 만든다
+            newname.textContent = `한준영`
+            // 요소에 id 속성을 set
+            newname.setAttribute("id","name")
+            // 부모요소를 자식에게 연결
+            list.appendChild(newname)
+            console.log(newname);
+        })
+
+        const newImg = document.createElement("img")
+        addBtn.addEventListener("click",function(){
+        newImg.setAttribute("src" , "images/tree-1-thumb.jpg")
+        newImg.setAttribute("alt" , "나무")
+        list.appendChild(newImg)
+        })
+        
+    </script>
+</body>
+</html>
