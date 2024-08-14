@@ -22,7 +22,7 @@
         border-radius: 5px;
         text-align: center;
       }
-      #colose {
+      #close {
         cursor: pointer;
       }
     </style>
@@ -31,27 +31,27 @@
     <button id="openModalBtn">open modal</button>
     <div class="modal" id="mymodal">
       <div class="modal-content">
-        <span id="colose">&times;</span>
+        <span id="close">&times;</span>
         <h2>Modal Title</h2>
         <p>여기는 안내창입니다.</p>
       </div>
     </div>
-
     <script>
-      // 요소선택
+      // 요소 선택
       const openModalBtn = document.querySelector("#openModalBtn");
       const modal = document.querySelector("#mymodal");
-      const colose = document.querySelector("#colose");
+      const colose = document.querySelector("#close");
       openModalBtn.addEventListener("click", function () {
-        modal.style.display = `flex`;
-        colose.addEventListener("click", function () {
-          modal.style.display = `none`;
-        });
+        modal.style.display = "flex";
       });
-      // window을 클릭했을때 모달이 닫힘
+      colose.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+      //  window 클릭했을때도 모달이 close되는 코드
       window.addEventListener("click", function (event) {
-        if (event.target === modal) 
-        modal.style.display = `none`;
+        if(event.target === modal){
+            modal.style.display = "none";
+        }
       });
     </script>
   </body>
